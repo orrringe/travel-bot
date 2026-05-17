@@ -32,7 +32,8 @@ from utils.validators import (
 )
 from keyboards.inline import (
     search_keyboard,
-    after_search_keyboard
+    after_search_keyboard,
+    get_months_keyboard
 )
 
 
@@ -108,6 +109,10 @@ async def start(message: Message):
         "Нажми кнопку ниже или напиши /help.\n"
         "Доступные города можно посмотреть по команде /cities",
         reply_markup=search_keyboard
+    )
+    await message.answer(
+    "Выбери месяц:",
+    reply_markup=get_months_keyboard()
     )
 
 
